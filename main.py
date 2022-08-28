@@ -1,16 +1,11 @@
-# This is a sample Python script.
+from application.salary import calculate_salary
+from application.db.people import get_employees
+from datetime import datetime
+import names
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    calculate_salary()
+    get_employees()
+    print(f'Actual date: {datetime.now().strftime("%A, %d. %B %Y %I:%M%p")}')
+    for i in range(int(input('How many people you want to check? Type here: '))):
+        print(names.get_full_name())
